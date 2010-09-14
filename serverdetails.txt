@@ -1,0 +1,433 @@
+Gumula
+
+Argonaut
+  ArgonautLTD
+    Argonaut04
+      Login
+        Domain Admin
+          Administrator
+          29admin77
+      Access Details
+        Remote Desktop
+          192.168.16.4 - Internal
+        VNC
+          192.168.16.4 - Internal
+          Login
+            29admin77 - Not Working (10/09/2010)
+      System
+        OS
+          Windows 2003 Server R2
+        Motherboard
+        
+        Processor
+          Xeon CPU E5335 @ 2.00 GHZ
+        Memory
+          4GB
+        
+        Printers
+          Dell 1720dn
+            Sharing
+              Shared
+                True
+              Share Name
+                Dell1720DN
+              List In Directory
+                True
+            Port
+              Name
+                IP_192.168.16.13
+              IP Address
+                192.168.16.13
+          Fuji-Xerox C525
+            Sharing
+              Shared
+                True
+              Share Name
+                FXDocuPr
+              List In Directory
+                True
+            Port
+              Name
+                IP_192.168.16.50
+              IP Address
+                192.168.16.50
+          Ricoh ASPL on Argonaut06
+            Sharing
+              Shared
+                True
+              Share Name
+                L13-R3245
+              Port
+                Name
+                  IP_192.168.16.141
+                IP Address
+                  192.168.16.11
+          Ricoh MPC5000
+            Sharing
+              Shared
+                True
+              Share Name
+                RICOHMP5000
+              Port
+                Name
+                  IP_192.168.16.12
+                IP Address
+                  192.168.16.12
+          Samsung CLP-660
+            Sharing
+              Shared
+                True
+              Share Name
+                CLP660CP
+              Port
+                Name
+                  192.168.16.3
+                IP Address
+                  192.168.16.3
+        Shares
+          ADMIN$
+            Local Path
+              C:\WINDOWS
+          C$
+            Local Path
+              C:\
+          D$
+            Local Path
+              D:\
+          data
+            Local Path
+              D:\data
+          DVD
+            Local Path
+              E:\
+          i386
+            Local Path
+              C:\i386
+          IPC$
+            Local Path
+              NULL
+          NETLOGON
+            Local Path
+              C:\Windows\SYSVOL\sysvol\ArgonautLtd.local\SCRIPTS
+          print$
+            Local Path
+              C:\Windows\System32\spool\drivers
+          Research In Motion
+            Local Path
+              C:\Program Files\Research In Motion
+          Source
+            Local Path
+              C:\ESATransFormer\Source
+          SYSVOL
+            Local Path
+              C:\Windows\SYSVOL\sysvol
+        Server Roles
+          File Server
+          Print Server
+          Application Server
+          Domain Controller
+          DNS Server
+          
+      IP Settings
+        DHCP: false
+        IP Address: 192.168.16.4
+        Subnet: 255.255.255.0
+        Default Gateway: 192.168.16.254
+        DNS Servers
+          192.168.16.4
+    
+    Argonaut06
+      Login
+        Domain Admin
+          Administrator
+          29admin77
+      Access Details
+        Remote Desktop
+          192.168.16.10 - Internal
+        VNC
+          192.168.16.10 - Internal
+          Login
+            29admin77
+      System
+        OS
+          Windows Server 2003 R2
+        Motherboard
+        
+        Processor
+          Xeon CPU E3120 @ 3.16GHz
+        Memory
+          4GB
+        Printers
+          HP CLJ 3600
+          HP CLJ2820 PCL 6 - Black_White
+          HP Color LaserJet 3600
+          Microsoft XPS Document Writer
+          Ricoh ASPL
+        Shares
+          ADMIN$
+          Argonaut Securities
+          ASPL
+          C$
+          Compliance
+          E$
+          Forms
+          IPC$
+          it
+          NETLOGON
+          ofcscan
+          print$
+          prnproc$
+          Research
+          Shared
+          SYSVOL
+          Users
+        Server Roles
+          File Server
+          Print Server
+          Application Server
+          Domain Controller
+          DNS Server
+          DHCP Server
+          
+      IP Settings
+        DHCP: false
+        IP Address: 192.168.16.10
+        Subnet: 255.255.255.0
+        Gateway: 192.168.16.254
+        DNS Server: 192.168.16.10
+        
+    ArgonautTS
+      Login
+        Domain Admin
+          Administrator
+          29admin77
+      Access Details
+        Remote Desktop
+          192.168.16.2 - Internal
+      System Specs
+        OS
+          Windows Server 2003 R2
+        Motherboard
+        
+        Processor
+          Xeon CPU @ 2.00GHz
+        Memory
+          768MB
+        Printers
+          FX DocuPrint C525 A-AP
+          Microsoft Office Document Image Writer
+          Microsoft XPS Document Writer
+          PDF995
+        Shares
+          argmarch
+          argonaut
+          Ex_staff
+          Hosting
+          IPC$
+          jayden
+          Laprillia
+          NETLOGON
+          regus
+          Research
+          SYSVOL
+          transfer
+          vpn.iquest.com.au
+        Server Roles
+          File Server
+          Application Server
+          Mail Server(POP3, SMTP)
+          Terminal Server
+          Domain Controller
+          DNS Server
+          
+      IP Settings
+        DHCP: false
+        IP Address
+          192.168.16.2
+        Subnet
+          255.255.255.0
+        Gateway
+          192.168.16.254
+        DNS Server
+          192.168.16.10
+          192.168.16.4
+          
+    Argo-s-admin-01
+      Login
+        Domain Admin
+          Administrator
+          29admin77
+      Access Details
+        Internal
+          Remote Desktop
+            192.168.16.72
+      System
+        OS
+          Windows Server 2008 Standard 64bit
+        Motherboard
+        
+        Processor
+          Core 2 Quad CPU Q6600 @ 2.40GHz  
+        Memory
+          4GB
+        Printers
+          Microsoft XPS Document Writer
+          RICOH Aficio MP C5000 PCL 5c
+          RICOH AFICIO MP C6501 PCL 5c
+        Shares
+        
+        Server Roles
+          Web Server (IIS)
+          Windows Server Update Services
+        
+      Network Settings
+        DHCP
+          true
+        IP Address
+          192.168.16.72
+        Subnet
+          255.255.255.0
+        Gateway
+          192.168.16.254
+        DNS Server
+          192.168.16.10
+          192.168.16.4
+        DHCP Server
+          192.168.16.10
+    Argo-s-ex-01
+      Login
+        Domain Admin
+          Administrator
+          29admin77
+      Access Details
+        Internal
+          Remote Desktop
+            192.168.16.15
+      System
+        OS
+          Windows Server 2008 Standard 64bit
+        Motherboard
+        
+        Processor
+          Xeon CPU E5520 @ 2.27GHz
+        Memory
+          14GB
+        Printers
+          Microsoft XPS Document
+        Shares
+          Address
+          ADMIN$
+          C$
+          E$
+          ExchangeOAB
+          IPC$
+          Resources$
+        Server Roles
+          Web Server IIS
+          Share Storage Managmenet
+          Microsoft Exchange
+      Network Settings
+        DHCP
+          true
+        IP Address
+          192.168.16.15
+        Subnet
+          255.255.255.0
+        Gateway
+          192.168.16.254
+        DNS Server
+          192.168.16.10
+          192.168.16.4
+    Argo-s-web-01
+      Login
+        Domain Admin
+          Administrator
+          29admin77
+      Access Details
+        Internal
+          Remote Desktop
+            192.168.16.5
+      System
+        OS
+          Windows Server 2003 R2
+        Motherboard
+        Processor
+          Xeon CPU @ 3.20GHz
+        Memory
+          4GB
+        
+        Printers
+          Microsoft XPS Document Writer
+        Shares          
+          ADMIN$
+          C$
+          IPC$
+        Server Roles
+          Application Server
+          
+      Network Settings
+        DHCP
+          false
+        IP Address
+          192.168.16.5
+        Subnet
+          255.255.255.0
+        Gateway
+          192.168.16.254
+        DNS Server
+          192.168.16.4
+          192.168.16.10
+          
+    Argonaut-ts01
+      Login
+        Domain Admin
+          administrator
+          29admin77
+      Access Details
+        Internal
+          Remote Desktop
+            192.168.16.13
+        External
+          Remote Desktop
+            Remote.argonautlimited.com
+      System
+        OS
+          Windows Server 2003 R2
+        Motherboard
+        Processor
+          Xeon CPU 3.06GHz
+        Memory
+          2GB
+        Printers
+          Canon MX320 Series Printer
+          CutePDF Writer
+          Epson Stylus
+          Photo R250 Series
+          Microsoft XPS Document Writer
+          RICOH MPC5000 on Argonaut04
+        Shares
+          ADMIN$
+          C$
+          DFS
+          IPC$
+          reports
+        Server Roles
+          File Server
+          Application Server
+          Terminal Server
+          DNS Server
+          
+      Network Settings
+        DHCP
+          false
+        IP Address
+          192.168.16.13
+        Subnet
+          255.255.255.0  
+        Default Gateway
+          192.168.16.254
+        DNS Server
+          192.168.16.10
+          192.168.16.4
+  
+  
