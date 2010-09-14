@@ -1,4 +1,6 @@
 ServerTracker::Application.routes.draw do
+  resources :domains
+
   resources :companies
 
   # The priority is based upon order of creation:
