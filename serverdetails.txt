@@ -1,4 +1,16 @@
 Gumula
+  WORKGROUP
+    Billion ASDL
+      IP Address
+        192.168.0.1
+      ADSL Settings
+        ADSL2+
+        LLC
+        PPPOE
+        8/35
+        gumulavicpark@bigpond.com
+        abc123
+        
 
 Argonaut
   ArgonautLTD
