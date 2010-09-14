@@ -1,0 +1,23 @@
+- title "Companies"
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th &nbsp;
+  %tbody
+    - @companies.each do |company|
+      %tr{:class => cycle('', 'box')}
+        %td.span-2= company.name
+        %td.span-15= company.description
+        %td.span-7
+          = link_to raw('<span class="ss_sprite ss_book" />Show'), company, :class => 'button'
+          = link_to raw('<span class="ss_sprite ss_book_edit" />Edit'), edit_company_path(company), :class => 'button positive'
+          = link_to raw('<span class="ss_sprite ss_book_delete" />Destroy'), company,:confirm => "Are you sure?", :method => :delete, :class => 'button negative'
+        -#  %ul
+        -#    %li.ss_sprite.ss_book= link_to "Show", company
+        -#    %li.ss_sprite.ss_book_edit= link_to "Edit", edit_company_path(company)
+        -#    %li.ss_sprite.ss_book_delete= link_to "Destroy", company, :confirm => "Are you sure?", :method => :delete
+          
+= link_to raw('<span class="ss_sprite ss_add" />New Company'), new_company_path, :class => 'button positive'

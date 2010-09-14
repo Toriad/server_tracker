@@ -1,4 +1,6 @@
 ServerTracker::Application.routes.draw do
+  resources :servers
+
   resources :domains
 
   resources :companies

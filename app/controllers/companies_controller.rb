@@ -28,7 +28,7 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
     if @company.update_attributes(params[:company])
-      flash[:notice] = "Successfully updated company."
+      flash[:success] = "Successfully updated company."
       redirect_to @company
     else
       render :action => 'edit'

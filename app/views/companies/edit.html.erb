@@ -3,6 +3,6 @@
 <%= render 'form' %>
 
 <p>
-  <%= link_to "Show", @company %> |
-  <%= link_to "View All", companies_path %>
+  <%= link_to raw('<span class="ss_sprite ss_book" />Show'), @company, :class => 'button' %>
+  <%= link_to raw('<span class="ss_sprite ss_book" />View All'), companies_path, :class => 'button'%>
 </p>

@@ -5,17 +5,38 @@
     %title
       = yield(:title) || "Untitled"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
-    = stylesheet_link_tag "application"
+    = stylesheet_link_tag "application.css"
+    = stylesheet_link_tag "blueprint/screen.css", :cache => true, :media => "screen, projection"
+    = stylesheet_link_tag "blueprint/print.css", :cache => true, :media => "print"
+    = stylesheet_link_tag "blueprint/plugins/link-icons/screen.css", :cache => true, :media => "screen, projection"
+    = stylesheet_link_tag "blueprint/plugins/sprites/sprite.css", :cache => true, :media => "screen, projection"
+    = stylesheet_link_tag "blueprint/plugins/buttons/screen.css", :cache => true, :media => "screen, projection"
     = javascript_include_tag :defaults
     = csrf_meta_tag
     = yield(:head)
   
   %body
-    #container
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
+    .container
+      
       
       - if show_title?
-        %h1= yield(:title)
-      
-      = yield
+        .span-23.last.large.top
+          %h1= yield(:title)
+      - else
+        .span-24.last.large.top
+          %h1 Server Tracker
+      %hr
+      .span-24.last
+        .span-4.box= link_to "Companies", companies_path
+        .span-4.box= link_to "Domains", domains_path
+        .span-4.box.last= link_to "Servers", servers_path
+      .span-24.last
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}", :class => name
+          = content_tag :script, raw("setTimeout(\"new Effect.Fade('flash_#{name}');\",4000);"), :type => 'text/javascript'
+        = yield
+      %hr
+      .span-24.last
+        %center
+          %h1 Footer
+        

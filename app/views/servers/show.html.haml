@@ -1,0 +1,12 @@
+- title "Server"
+
+%p
+  %strong Name:
+  = @server.name
+
+%p
+  = link_to "Edit", edit_server_path(@server)
+  |
+  = link_to "Destroy", @server, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", servers_path
