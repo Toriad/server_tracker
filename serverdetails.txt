@@ -1,3 +1,32 @@
+AJHL
+  WORKGROUP
+    System				
+    	Processsor
+    		Intel Core i3 530
+    	Memory
+    		4gb
+    	Printers
+    	  Xerox 3117
+    	  Xerox 3100
+    	Shares
+    	Settings
+    		UAC
+    			Never Notify
+    		Windows Update
+    			Download but I chose when to install
+Software
+	Windows 7 Professional 32-Bit
+			Licensing
+				4CFYH-VWB4V-HGMHW-7JDYD-9CPKT
+	Microsoft Office 2010 - Home and Business
+		Licenseing
+			XJV73-7WRQQ-9QXRJ-J49M3-VTYXJ - Single Copy
+	Kaspersky Small Office Security
+		Licensing
+			5 PCs
+			1 File Server
+		
+
 Gumula
   WORKGROUP
     Billion ASDL
@@ -12,9 +41,9 @@ Gumula
         abc123
         
 
-Argonaut
-  ArgonautLTD
-    Argonaut04
+-Argonaut
+  -ArgonautLTD
+    -Argonaut04
       Login
         Domain Admin
           Administrator
@@ -26,15 +55,15 @@ Argonaut
           192.168.16.4 - Internal
           Login
             29admin77 - Not Working (10/09/2010)
-      System
-        OS
-          Windows 2003 Server R2
-        Motherboard
+      -System
+        -OS
+          -Windows 2003 Server R2
+        -Motherboard
         
-        Processor
-          Xeon CPU E5335 @ 2.00 GHZ
-        Memory
-          4GB
+        -Processor
+          -Xeon CPU E5335 @ 2.00 GHZ
+        -Memory
+          -4GB
         
         Printers
           Dell 1720dn

@@ -1,0 +1,20 @@
+- form_for @system do |f|
+  = f.error_messages
+  %p
+    = f.label :operating_system
+    %br
+    = f.text_field :operating_system
+  %p
+    = f.label :motherboard
+    %br
+    = f.text_field :motherboard
+  %p
+    = f.label :processor
+    %br
+    = f.text_field :processor
+  %p
+    = f.label :memory
+    %br
+    = f.text_field :memory
+  %p
+    = f.submit

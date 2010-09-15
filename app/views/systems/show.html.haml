@@ -1,0 +1,21 @@
+- title "System"
+
+%p
+  %strong Operating System:
+  = @system.operating_system
+%p
+  %strong Motherboard:
+  = @system.motherboard
+%p
+  %strong Processor:
+  = @system.processor
+%p
+  %strong Memory:
+  = @system.memory
+
+%p
+  = link_to "Edit", edit_system_path(@system)
+  |
+  = link_to "Destroy", @system, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", systems_path

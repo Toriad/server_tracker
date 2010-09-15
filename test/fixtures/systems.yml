@@ -1,0 +1,11 @@
+one:
+  operating_system: MyString
+  motherboard: MyString
+  processor: MyString
+  memory: MyString
+
+two:
+  operating_system: MyString
+  motherboard: MyString
+  processor: MyString
+  memory: MyString

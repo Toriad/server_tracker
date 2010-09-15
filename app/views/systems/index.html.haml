@@ -1,0 +1,19 @@
+- title "Systems"
+
+%table
+  %tr
+    %th Operating system
+    %th Motherboard
+    %th Processor
+    %th Memory
+  - for system in @systems
+    %tr
+      %td= system.operating_system
+      %td= system.motherboard
+      %td= system.processor
+      %td= system.memory
+      %td= link_to 'Show', system
+      %td= link_to 'Edit', edit_system_path(system)
+      %td= link_to 'Destroy', system, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New System", new_system_path
