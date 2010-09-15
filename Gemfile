@@ -1,14 +1,29 @@
 source 'http://rubygems.org'
 
+#Rails Versions
 gem 'rails', '3.0.0'
-gem 'nifty-generators'
+#gem 'rails', :git => 'git://github.com/rails/rails.git' #Edge
+  
+#Database Gems
+gem 'sqlite3-ruby', :require => 'sqlite3'
+
+
+
 gem 'haml'
+gem 'nifty-generators'
+
+gem 'database_cleaner'
+gem 'cucumber-rails'
+gem 'cucumber'
+gem 'rspec-rails'
+gem 'spork'
+gem 'launchy'
+gem 'nokogiri'
+gem 'capybara'
+
+gem 'machinist', '>= 2.0.0.beta1'
 gem 'faker'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'

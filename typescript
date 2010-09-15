@@ -1788,4 +1788,493 @@ Completed 302 Found in 99ms
 
 
 Started GET "/companies/4" for 127.0.0.1 at Wed Sep 15 02:19:39 +0800 2010
-  Processing by Comp
+  Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCompany Load (0.0ms)[0m  SELECT "companies".* FROM "companies" WHERE ("companies"."id" = 4) LIMIT 1
+Rendered companies/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 53ms (Views: 34.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at Wed Sep 15 02:19:45 +0800 2010
+  Processing by CompaniesController#index as HTML
+  [1m[36mCompany Load (0.0ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+Rendered companies/index.html.haml within layouts/application (62.0ms)
+Completed 200 OK in 93ms (Views: 82.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/servers" for 127.0.0.1 at Wed Sep 15 02:19:50 +0800 2010
+  Processing by ServersController#index as HTML
+  [1m[35mServer Load (0.0ms)[0m  SELECT "servers".* FROM "servers"
+Rendered servers/index.html.haml within layouts/application (14.0ms)
+Completed 200 OK in 45ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/servers/1" for 127.0.0.1 at Wed Sep 15 02:19:54 +0800 2010
+  Processing by ServersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cG3Nz94PEqp1c58dGWsUlUg1N9YA7vea6bK43IpyhTI=", "id"=>"1"}
+  [1m[36mServer Load (0.0ms)[0m  [1mSELECT "servers".* FROM "servers" WHERE ("servers"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "servers" WHERE ("servers"."id" = 1)
+Redirected to http://localhost:3000/servers
+Completed 302 Found in 97ms
+
+
+Started GET "/servers" for 127.0.0.1 at Wed Sep 15 02:19:54 +0800 2010
+  Processing by ServersController#index as HTML
+  [1m[36mServer Load (0.0ms)[0m  [1mSELECT "servers".* FROM "servers"[0m
+Rendered servers/index.html.haml within layouts/application (10.0ms)
+Completed 200 OK in 41ms (Views: 31.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at Wed Sep 15 02:19:54 +0800 2010
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (0.0ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.haml within layouts/application (15.0ms)
+Completed 200 OK in 47ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/domains" for 127.0.0.1 at Wed Sep 15 02:19:55 +0800 2010
+  Processing by DomainsController#index as HTML
+  [1m[36mDomain Load (0.0ms)[0m  [1mSELECT "domains".* FROM "domains"[0m
+Rendered domains/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 90ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/companies" for 127.0.0.1 at Wed Sep 15 02:19:56 +0800 2010
+  Processing by CompaniesController#index as HTML
+  [1m[35mCompany Load (0.0ms)[0m  SELECT "companies".* FROM "companies"
+Rendered companies/index.html.haml within layouts/application (16.0ms)
+Completed 200 OK in 48ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+[2010-09-15 02:20:11] INFO  going to shutdown ...
+[2010-09-15 02:20:11] INFO  WEBrick::HTTPServer#start done.
+Exiting
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ ls
+Gemfile       app	 doc	 ruby.exe.stackdump  tmp
+Gemfile.lock  config	 lib	 script		     typescript
+README	      config.ru  log	 serverdetails.txt   vendor
+Rakefile      db	 public  test
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git add .
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git add *
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git commit -m "H[KLots of Stuff was added, mostly css and layout stuff. once I g
+et one look[K[K[K[Klayout done I can make helpers for the rest"
+[master e5d8ec7] Lots of Stuff was added, mostly css and layout stuff. once I get one layout done I can make helpers for the rest
+ Committer: U-DEADHOUSE\james.black <james.black@DEAD-PER-PC-01.deadhouse.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 151 files changed, 13441 insertions(+), 82 deletions(-)
+ mode change 100644 => 100755 Gemfile
+ mode change 100644 => 100755 app/controllers/companies_controller.rb
+ create mode 100644 app/controllers/servers_controller.rb
+ create mode 100644 app/helpers/servers_helper.rb
+ create mode 100644 app/models/server.rb
+ mode change 100644 => 100755 app/views/companies/_form.html.erb
+ mode change 100644 => 100755 app/views/companies/edit.html.erb
+ create mode 100755 app/views/companies/index.html.haml
+ mode change 100644 => 100755 app/views/layouts/application.html.haml
+ create mode 100644 app/views/servers/_form.html.haml
+ create mode 100644 app/views/servers/edit.html.haml
+ create mode 100644 app/views/servers/index.html.haml
+ create mode 100644 app/views/servers/new.html.haml
+ create mode 100644 app/views/servers/show.html.haml
+ create mode 100644 db/migrate/20100914135847_create_servers.rb
+ create mode 100755 public/.gitignore
+ create mode 100755 public/stylesheets/AUTHORS.textile
+ create mode 100755 public/stylesheets/CHANGELOG
+ create mode 100755 public/stylesheets/LICENSE
+ create mode 100755 public/stylesheets/README.textile
+ create mode 100755 public/stylesheets/TUTORIAL.textile
+ rewrite public/stylesheets/application.css (100%)
+ mode change 100644 => 100755
+ create mode 100755 public/stylesheets/blueprint/ie.css
+ create mode 100755 public/stylesheets/blueprint/plugins/buttons/icons/cross.png
+ create mode 100755 public/stylesheets/blueprint/plugins/buttons/icons/key.png
+ create mode 100755 public/stylesheets/blueprint/plugins/buttons/icons/tick.png
+ create mode 100755 public/stylesheets/blueprint/plugins/buttons/readme.txt
+ create mode 100755 public/stylesheets/blueprint/plugins/buttons/screen.css
+ create mode 100755 public/stylesheets/blueprint/plugins/fancy-type/readme.txt
+ create mode 100755 public/stylesheets/blueprint/plugins/fancy-type/screen.css
+ create mode 100755 public/stylesheets/blueprint/plugins/link-icons/icons/doc.png
+ create mode 100755 public/stylesheets/blueprint/plugins/link-icons/icons/email.png
+ create mode 100755 public/stylesheets/blueprint/plugins/link-icons/icons/external.png
+ create mode 100755 public/stylesheets/blueprint/plugins/link-icons/icons/feed.png
+ create mode 100755 public/stylesheets/blueprint/plugins/link-icons/icons/im.png
+ create mode 100755 public/stylesheets/blueprint/plugins/link-icons/icons/pdf.png
+ create mode 100755 public/stylesheets/blueprint/plugins/link-icons/icons/visited.png
+ create mode 100755 public/stylesheets/blueprint/plugins/link-icons/icons/xls.png
+ create mode 100755 public/stylesheets/blueprint/plugins/link-icons/readme.txt
+ create mode 100755 public/stylesheets/blueprint/plugins/link-icons/screen.css
+ create mode 100755 public/stylesheets/blueprint/plugins/liquid/liquid.css
+ create mode 100755 public/stylesheets/blueprint/plugins/rtl/readme.txt
+ create mode 100755 public/stylesheets/blueprint/plugins/rtl/screen.css
+ create mode 100755 public/stylesheets/blueprint/plugins/sprites/sprite.css
+ create mode 100755 public/stylesheets/blueprint/plugins/sprites/sprites.png
+ create mode 100755 public/stylesheets/blueprint/plugins/sprites/test.htm
+ create mode 100755 public/stylesheets/blueprint/plugins/tabs/screen.css
+ create mode 100755 public/stylesheets/blueprint/print.css
+ create mode 100755 public/stylesheets/blueprint/screen.css
+ create mode 100755 public/stylesheets/blueprint/src/forms.css
+ create mode 100755 public/stylesheets/blueprint/src/grid.css
+ create mode 100755 public/stylesheets/blueprint/src/grid.png
+ create mode 100755 public/stylesheets/blueprint/src/ie.css
+ create mode 100755 public/stylesheets/blueprint/src/print.css
+ create mode 100755 public/stylesheets/blueprint/src/reset.css
+ create mode 100755 public/stylesheets/blueprint/src/typography.css
+ create mode 100755 public/stylesheets/doc/classes/Blueprint.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CSSParser.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CSSParser.src/M000011.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CSSParser.src/M000012.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CSSParser.src/M000013.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Compressor.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Compressor.src/M000027.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Compressor.src/M000028.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Compressor.src/M000029.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CustomLayout.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CustomLayout.src/M000020.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CustomLayout.src/M000021.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CustomLayout.src/M000022.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CustomLayout.src/M000023.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CustomLayout.src/M000024.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CustomLayout.src/M000025.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/CustomLayout.src/M000026.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/GridBuilder.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/GridBuilder.src/M000014.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/GridBuilder.src/M000015.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Namespace.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Namespace.src/M000016.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Namespace.src/M000017.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Namespace.src/M000018.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Namespace.src/M000019.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/SemanticClassNames.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/SemanticClassNames.src/M000009.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/SemanticClassNames.src/M000010.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Validator.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Validator.src/M000007.html
+ create mode 100755 public/stylesheets/doc/classes/Blueprint/Validator.src/M000008.html
+ create mode 100755 public/stylesheets/doc/classes/File.html
+ create mode 100755 public/stylesheets/doc/classes/File.src/M000001.html
+ create mode 100755 public/stylesheets/doc/classes/File.src/M000002.html
+ create mode 100755 public/stylesheets/doc/classes/String.html
+ create mode 100755 public/stylesheets/doc/classes/String.src/M000003.html
+ create mode 100755 public/stylesheets/doc/classes/String.src/M000004.html
+ create mode 100755 public/stylesheets/doc/classes/String.src/M000005.html
+ create mode 100755 public/stylesheets/doc/classes/String.src/M000006.html
+ create mode 100755 public/stylesheets/doc/created.rid
+ create mode 100755 public/stylesheets/doc/files/lib/blueprint/blueprint_rb.html
+ create mode 100755 public/stylesheets/doc/files/lib/blueprint/compressor_rb.html
+ create mode 100755 public/stylesheets/doc/files/lib/blueprint/core_ext_rb.html
+ create mode 100755 public/stylesheets/doc/files/lib/blueprint/css_parser_rb.html
+ create mode 100755 public/stylesheets/doc/files/lib/blueprint/custom_layout_rb.html
+ create mode 100755 public/stylesheets/doc/files/lib/blueprint/grid_builder_rb.html
+ create mode 100755 public/stylesheets/doc/files/lib/blueprint/namespace_rb.html
+ create mode 100755 public/stylesheets/doc/files/lib/blueprint/semantic_class_names_rb.html
+ create mode 100755 public/stylesheets/doc/files/lib/blueprint/validator_rb.html
+ create mode 100755 public/stylesheets/doc/files/lib/compress_rb.html
+ create mode 100755 public/stylesheets/doc/files/lib/validate_rb.html
+ create mode 100755 public/stylesheets/doc/fr_class_index.html
+ create mode 100755 public/stylesheets/doc/fr_file_index.html
+ create mode 100755 public/stylesheets/doc/fr_method_index.html
+ create mode 100755 public/stylesheets/doc/index.html
+ create mode 100755 public/stylesheets/doc/rdoc-style.css
+ create mode 100755 public/stylesheets/lib/blueprint/blueprint.rb
+ create mode 100755 public/stylesheets/lib/blueprint/compressor.rb
+ create mode 100755 public/stylesheets/lib/blueprint/core_ext.rb
+ create mode 100755 public/stylesheets/lib/blueprint/css_parser.rb
+ create mode 100755 public/stylesheets/lib/blueprint/custom_layout.rb
+ create mode 100755 public/stylesheets/lib/blueprint/grid.css.erb
+ create mode 100755 public/stylesheets/lib/blueprint/grid_builder.rb
+ create mode 100755 public/stylesheets/lib/blueprint/namespace.rb
+ create mode 100755 public/stylesheets/lib/blueprint/semantic_class_names.rb
+ create mode 100755 public/stylesheets/lib/blueprint/validate/COPYRIGHT.html
+ create mode 100755 public/stylesheets/lib/blueprint/validate/JIGSAW_COPYRIGHT
+ create mode 100755 public/stylesheets/lib/blueprint/validate/README.html
+ create mode 100755 public/stylesheets/lib/blueprint/validate/XERCES_COPYING.txt
+ create mode 100755 public/stylesheets/lib/blueprint/validate/css-validator-javadoc.jar
+ create mode 100755 public/stylesheets/lib/blueprint/validate/css-validator.jar
+ create mode 100755 public/stylesheets/lib/blueprint/validate/jigsaw.jar
+ create mode 100755 public/stylesheets/lib/blueprint/validate/xerces.jar
+ create mode 100755 public/stylesheets/lib/blueprint/validator.rb
+ create mode 100755 public/stylesheets/lib/compress.rb
+ create mode 100755 public/stylesheets/lib/settings.example.yml
+ create mode 100755 public/stylesheets/lib/validate.rb
+ create mode 100755 public/stylesheets/templates/psd/fixed-width.psd
+ create mode 100755 public/stylesheets/tests/index.html
+ create mode 100755 public/stylesheets/tests/parts/elements.html
+ create mode 100755 public/stylesheets/tests/parts/forms.html
+ create mode 100755 public/stylesheets/tests/parts/grid.html
+ create mode 100755 public/stylesheets/tests/parts/sample.html
+ create mode 100755 public/stylesheets/tests/parts/test-small.jpg
+ create mode 100755 public/stylesheets/tests/parts/test.jpg
+ create mode 100755 public/stylesheets/tests/parts/valid.png
+ create mode 100755 ruby.exe.stackdump
+ mode change 100644 => 100755 serverdetails.txt
+ create mode 100644 test/fixtures/servers.yml
+ create mode 100644 test/functional/servers_controller_test.rb
+ create mode 100644 test/unit/server_test.rb
+ create mode 100644 typescript
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git push
+Counting objects: 229, done.
+Delta compression using up to 8 threads.
+Compressing objects:   0% (1/194)   Compressing objects:   1% (2/194)   Compressing objects:   2% (4/194)   Compressing objects:   3% (6/194)   Compressing objects:   4% (8/194)   Compressing objects:   5% (10/194)   Compressing objects:   6% (12/194)   Compressing objects:   7% (14/194)   Compressing objects:   8% (16/194)   Compressing objects:   9% (18/194)   Compressing objects:  10% (20/194)   Compressing objects:  11% (22/194)   Compressing objects:  12% (24/194)   Compressing objects:  13% (26/194)   Compressing objects:  14% (28/194)   Compressing objects:  15% (30/194)   Compressing objects:  16% (32/194)   Compressing objects:  17% (33/194)   Compressing objects:  18% (35/194)   Compressing objects:  19% (37/194)   Compressing objects:  20% (39/194)   Compressing objects:  21% (41/194)   Compressing objects:  22% (43/194)   Compressing objects:  23% (45/194)   Compressing objects:  24% (47/194)   Compressing objects:  25% (49/194)   Compressing objects:  26% (51/194)   Compressing objects:  27% (53/194)   Compressing objects:  28% (55/194)   Compressing objects:  29% (57/194)   Compressing objects:  30% (59/194)   Compressing objects:  31% (61/194)   Compressing objects:  32% (63/194)   Compressing objects:  33% (65/194)   Compressing objects:  34% (66/194)   Compressing objects:  35% (68/194)   Compressing objects:  36% (70/194)   Compressing objects:  37% (72/194)   Compressing objects:  38% (74/194)   Compressing objects:  39% (76/194)   Compressing objects:  40% (78/194)   Compressing objects:  41% (80/194)   Compressing objects:  42% (82/194)   Compressing objects:  43% (84/194)   Compressing objects:  44% (86/194)   Compressing objects:  45% (88/194)   Compressing objects:  46% (90/194)   Compressing objects:  47% (92/194)   Compressing objects:  48% (94/194)   Compressing objects:  49% (96/194)   Compressing objects:  50% (97/194)   Compressing objects:  51% (99/194)   Compressing objects:  52% (101/194)   Compressing objects:  53% (103/194)   Compressing objects:  54% (105/194)   Compressing objects:  55% (107/194)   Compressing objects:  56% (109/194)   Compressing objects:  57% (111/194)   Compressing objects:  58% (113/194)   Compressing objects:  59% (115/194)   Compressing objects:  60% (117/194)   Compressing objects:  61% (119/194)   Compressing objects:  62% (121/194)   Compressing objects:  63% (123/194)   Compressing objects:  64% (125/194)   Compressing objects:  65% (127/194)   Compressing objects:  66% (129/194)   Compressing objects:  67% (130/194)   Compressing objects:  68% (132/194)   Compressing objects:  69% (134/194)   Compressing objects:  70% (136/194)   Compressing objects:  71% (138/194)   Compressing objects:  72% (140/194)   Compressing objects:  73% (142/194)   Compressing objects:  74% (144/194)   Compressing objects:  75% (146/194)   Compressing objects:  76% (148/194)   Compressing objects:  77% (150/194)   Compressing objects:  78% (152/194)   Compressing objects:  79% (154/194)   Compressing objects:  80% (156/194)   Compressing objects:  81% (158/194)   Compressing objects:  82% (160/194)   Compressing objects:  83% (162/194)   Compressing objects:  84% (163/194)   Compressing objects:  85% (165/194)   Compressing objects:  86% (167/194)   Compressing objects:  87% (169/194)   Compressing objects:  88% (171/194)   Compressing objects:  89% (173/194)   Compressing objects:  90% (175/194)   Compressing objects:  91% (177/194)   Compressing objects:  92% (179/194)   Compressing objects:  93% (181/194)   Compressing objects:  94% (183/194)   Compressing objects:  95% (185/194)   Compressing objects:  96% (187/194)   Compressing objects:  97% (189/194)   Compressing objects:  98% (191/194)   Compressing objects:  99% (193/194)   Compressing objects: 100% (194/194)   Compressing objects: 100% (194/194), done.
+Writing objects:   0% (1/203)   Writing objects:   1% (3/203)   Writing objects:   2% (5/203)   Writing objects:   3% (7/203)   Writing objects:   4% (9/203)   Writing objects:   5% (11/203)   Writing objects:   6% (13/203)   Writing objects:   7% (15/203)   Writing objects:   8% (17/203)   Writing objects:   9% (19/203)   Writing objects:  10% (21/203)   Writing objects:  11% (23/203)   Writing objects:  12% (25/203)   Writing objects:  13% (27/203)   Writing objects:  14% (29/203)   Writing objects:  15% (31/203)   Writing objects:  16% (33/203)   Writing objects:  17% (35/203)   Writing objects:  18% (37/203)   Writing objects:  19% (39/203)   Writing objects:  20% (41/203)   Writing objects:  21% (43/203)   Writing objects:  22% (45/203)   Writing objects:  23% (47/203)   Writing objects:  24% (49/203)   Writing objects:  25% (51/203)   Writing objects:  26% (53/203)   Writing objects:  27% (55/203)   Writing objects:  28% (57/203)   Writing objects:  29% (59/203)   Writing objects:  30% (61/203)   Writing objects:  31% (63/203)   Writing objects:  32% (65/203)   Writing objects:  33% (68/203)   Writing objects:  34% (70/203)   Writing objects:  35% (72/203)   Writing objects:  36% (74/203)   Writing objects:  37% (76/203)   Writing objects:  38% (78/203)   Writing objects:  39% (80/203)   Writing objects:  40% (82/203)   Writing objects:  41% (84/203)   Writing objects:  42% (86/203)   Writing objects:  43% (88/203)   Writing objects:  44% (90/203)   Writing objects:  45% (93/203)   Writing objects:  46% (94/203)   Writing objects:  48% (98/203)   Writing objects:  49% (101/203)   Writing objects:  50% (102/203)   Writing objects:  53% (108/203)   Writing objects:  54% (111/203)   Writing objects:  55% (113/203)   Writing objects:  56% (114/203)   Writing objects:  57% (116/203)   Writing objects:  58% (118/203)   Writing objects:  59% (120/203)   Writing objects:  60% (123/203)   Writing objects:  61% (124/203)   Writing objects:  62% (126/203)   Writing objects:  63% (128/203)   Writing objects:  64% (131/203)   Writing objects:  65% (132/203)   Writing objects:  66% (134/203)   Writing objects:  67% (137/203)   Writing objects:  68% (139/203)   Writing objects:  69% (141/203)   Writing objects:  70% (143/203)   Writing objects:  71% (145/203)   Writing objects:  72% (147/203)   Writing objects:  73% (149/203)   Writing objects:  74% (151/203)   Writing objects:  75% (153/203)   Writing objects:  76% (155/203)   Writing objects:  77% (157/203)   Writing objects:  78% (159/203)   Writing objects:  79% (161/203)   Writing objects:  80% (163/203)   Writing objects:  81% (165/203)   Writing objects:  82% (167/203)   Writing objects:  83% (169/203)   Writing objects:  84% (171/203)   Writing objects:  85% (173/203)   Writing objects:  85% (174/203), 2.08 MiB | 1.11 MiB/s   Writing objects:  85% (174/203), 2.17 MiB | 787 KiB/s   Writing objects:  85% (174/203), 2.30 MiB | 627 KiB/s   Writing objects:  85% (174/203), 2.42 MiB | 526 KiB/s   Writing objects:  86% (175/203), 2.42 MiB | 526 KiB/s   Writing objects:  86% (175/203), 2.55 MiB | 461 KiB/s   Writing objects:  86% (175/203), 2.67 MiB | 416 KiB/s   Writing objects:  86% (175/203), 2.80 MiB | 380 KiB/s   Writing objects:  86% (175/203), 2.92 MiB | 354 KiB/s   Writing objects:  86% (175/203), 3.05 MiB | 333 KiB/s   Writing objects:  86% (175/203), 3.17 MiB | 133 KiB/s   Writing objects:  86% (175/203), 3.30 MiB | 137 KiB/s   Writing objects:  86% (176/203), 3.42 MiB | 137 KiB/s   Writing objects:  86% (176/203), 3.55 MiB | 137 KiB/s   Writing objects:  86% (176/203), 3.80 MiB | 137 KiB/s   Writing objects:  87% (177/203), 3.80 MiB | 137 KiB/s   Writing objects:  88% (179/203), 3.80 MiB | 137 KiB/s   Writing objects:  89% (181/203), 3.80 MiB | 137 KiB/s   Writing objects:  90% (183/203), 3.80 MiB | 137 KiB/s   Writing objects:  90% (183/203), 3.92 MiB | 137 KiB/s   Writing objects:  90% (183/203), 4.05 MiB | 137 KiB/s   Writing objects:  91% (185/203), 4.05 MiB | 137 KiB/s   Writing objects:  92% (187/203), 4.05 MiB | 137 KiB/s   Writing objects:  93% (189/203), 4.05 MiB | 137 KiB/s   Writing objects:  94% (191/203), 4.05 MiB | 137 KiB/s   Writing objects:  95% (193/203), 4.05 MiB | 137 KiB/s   Writing objects:  96% (195/203), 4.05 MiB | 137 KiB/s   Writing objects:  97% (197/203), 4.05 MiB | 137 KiB/s   Writing objects:  98% (199/203), 4.05 MiB | 137 KiB/s   Writing objects:  99% (201/203), 4.05 MiB | 137 KiB/s   Writing objects: 100% (203/203), 4.05 MiB | 137 KiB/s   Writing objects: 100% (203/203), 4.13 MiB | 137 KiB/s, done.
+Total 203 (delta 57), reused 0 (delta 0)
+To git@github.com:Toriad/server_tracker.git
+   896afe0..e5d8ec7  master -> master
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git pus[K[K[Kcommit ->[Kn "[K[K[Km"[K "readme updated"
+# On branch master
+# Changed but not updated:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   README
+#	deleted:    app/views/companies/index.html.erb
+#	deleted:    app/views/layouts/application.html.erb
+#	deleted:    public/index.html
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git ad .
+git: 'ad' is not a git command. See 'git --help'.
+
+Did you mean this?
+	add
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git add .
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ i[Kgit comadd .[1P .[1Pdcommit -m "readme updated"
+[master 4b50a28] readme updated
+ Committer: U-DEADHOUSE\james.black <james.black@DEAD-PER-PC-01.deadhouse.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 9 insertions(+), 0 deletions(-)
+ mode change 100644 => 100755 README
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git push
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 488 bytes, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To git@github.com:Toriad/server_tracker.git
+   e5d8ec7..4b50a28  master -> master
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ gem install rdoc
+RDoc 2.5 did not save method parameters, so you should upgrade your rdoc-data
+gem to a version >= 2.5.3.
+
+To have ri data for core and stdlib you'll need to:
+
+  gem install rdoc-data
+
+then run:
+
+  rdoc-data --install
+
+To have ri data for you gems you'll also need to run:
+
+  gem rdoc --all --overwrite
+
+If you don't want to rebuild the rdoc for `gem server`, add --no-rdoc.
+Successfully installed rdoc-2.5.11
+1 gem installed
+Installing ri documentation for rdoc-2.5.11...
+Installing RDoc documentation for rdoc-2.5.11...
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ rake doc:app
+(in /cygdrive/e/Dev/RoR/Sites/server_tracker)
+rm -r doc/app
+
+                     README_FOR_APP: 
+          application_controller.rb: c
+            companies_controller.rb: c.......
+              domains_controller.rb: c.......
+              servers_controller.rb: c.......
+              application_helper.rb: m
+                companies_helper.rb: m
+                  domains_helper.rb: m
+           error_messages_helper.rb: m.m.
+                   layout_helper.rb: m....
+                  servers_helper.rb: m
+                         company.rb: c
+                          domain.rb: c
+                          server.rb: c
+Generating HTML...
+
+Files:   14
+Classes: 7
+Modules: 7
+Methods: 27
+Elapsed: 8.433s
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git add .
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git commit -m "Doc?"
+[master 10b1466] Doc?
+ Committer: U-DEADHOUSE\james.black <james.black@DEAD-PER-PC-01.deadhouse.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 34 files changed, 4110 insertions(+), 0 deletions(-)
+ create mode 100644 doc/app/classes/ApplicationController.html
+ create mode 100644 doc/app/classes/ApplicationHelper.html
+ create mode 100644 doc/app/classes/CompaniesController.html
+ create mode 100644 doc/app/classes/CompaniesHelper.html
+ create mode 100644 doc/app/classes/Company.html
+ create mode 100644 doc/app/classes/Domain.html
+ create mode 100644 doc/app/classes/DomainsController.html
+ create mode 100644 doc/app/classes/DomainsHelper.html
+ create mode 100644 doc/app/classes/ErrorMessagesHelper.html
+ create mode 100644 doc/app/classes/ErrorMessagesHelper/FormBuilderAdditions.html
+ create mode 100644 doc/app/classes/LayoutHelper.html
+ create mode 100644 doc/app/classes/Server.html
+ create mode 100644 doc/app/classes/ServersController.html
+ create mode 100644 doc/app/classes/ServersHelper.html
+ create mode 100644 doc/app/created.rid
+ create mode 100644 doc/app/files/app/controllers/application_controller_rb.html
+ create mode 100644 doc/app/files/app/controllers/companies_controller_rb.html
+ create mode 100644 doc/app/files/app/controllers/domains_controller_rb.html
+ create mode 100644 doc/app/files/app/controllers/servers_controller_rb.html
+ create mode 100644 doc/app/files/app/helpers/application_helper_rb.html
+ create mode 100644 doc/app/files/app/helpers/companies_helper_rb.html
+ create mode 100644 doc/app/files/app/helpers/domains_helper_rb.html
+ create mode 100644 doc/app/files/app/helpers/error_messages_helper_rb.html
+ create mode 100644 doc/app/files/app/helpers/layout_helper_rb.html
+ create mode 100644 doc/app/files/app/helpers/servers_helper_rb.html
+ create mode 100644 doc/app/files/app/models/company_rb.html
+ create mode 100644 doc/app/files/app/models/domain_rb.html
+ create mode 100644 doc/app/files/app/models/server_rb.html
+ create mode 100644 doc/app/files/doc/README_FOR_APP.html
+ create mode 100644 doc/app/fr_class_index.html
+ create mode 100644 doc/app/fr_file_index.html
+ create mode 100644 doc/app/fr_method_index.html
+ create mode 100644 doc/app/index.html
+ create mode 100644 doc/app/rdoc-style.css
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git push
+Counting objects: 47, done.
+Delta compression using up to 8 threads.
+Compressing objects:   2% (1/43)   Compressing objects:   4% (2/43)   Compressing objects:   6% (3/43)   Compressing objects:   9% (4/43)   Compressing objects:  11% (5/43)   Compressing objects:  13% (6/43)   Compressing objects:  16% (7/43)   Compressing objects:  18% (8/43)   Compressing objects:  20% (9/43)   Compressing objects:  23% (10/43)   Compressing objects:  25% (11/43)   Compressing objects:  27% (12/43)   Compressing objects:  30% (13/43)   Compressing objects:  32% (14/43)   Compressing objects:  34% (15/43)   Compressing objects:  37% (16/43)   Compressing objects:  39% (17/43)   Compressing objects:  41% (18/43)   Compressing objects:  44% (19/43)   Compressing objects:  46% (20/43)   Compressing objects:  48% (21/43)   Compressing objects:  51% (22/43)   Compressing objects:  53% (23/43)   Compressing objects:  55% (24/43)   Compressing objects:  58% (25/43)   Compressing objects:  60% (26/43)   Compressing objects:  62% (27/43)   Compressing objects:  65% (28/43)   Compressing objects:  67% (29/43)   Compressing objects:  69% (30/43)   Compressing objects:  72% (31/43)   Compressing objects:  74% (32/43)   Compressing objects:  76% (33/43)   Compressing objects:  79% (34/43)   Compressing objects:  81% (35/43)   Compressing objects:  83% (36/43)   Compressing objects:  86% (37/43)   Compressing objects:  88% (38/43)   Compressing objects:  90% (39/43)   Compressing objects:  93% (40/43)   Compressing objects:  95% (41/43)   Compressing objects:  97% (42/43)   Compressing objects: 100% (43/43)   Compressing objects: 100% (43/43), done.
+Writing objects:   2% (1/45)   Writing objects:   4% (2/45)   Writing objects:   6% (3/45)   Writing objects:   8% (4/45)   Writing objects:  11% (5/45)   Writing objects:  17% (8/45)   Writing objects:  24% (11/45)   Writing objects:  26% (12/45)   Writing objects:  28% (13/45)   Writing objects:  31% (14/45)   Writing objects:  33% (15/45)   Writing objects:  35% (16/45)   Writing objects:  37% (17/45)   Writing objects:  40% (18/45)   Writing objects:  42% (19/45)   Writing objects:  44% (20/45)   Writing objects:  46% (21/45)   Writing objects:  48% (22/45)   Writing objects:  51% (23/45)   Writing objects:  53% (24/45)   Writing objects:  55% (25/45)   Writing objects:  57% (26/45)   Writing objects:  60% (27/45)   Writing objects:  62% (28/45)   Writing objects:  64% (29/45)   Writing objects:  68% (31/45)   Writing objects:  71% (32/45)   Writing objects:  73% (33/45)   Writing objects:  75% (34/45)   Writing objects:  77% (35/45)   Writing objects:  80% (36/45)   Writing objects:  82% (37/45)   Writing objects:  84% (38/45)   Writing objects:  86% (39/45)   Writing objects:  88% (40/45)   Writing objects:  91% (41/45)   Writing objects:  93% (42/45)   Writing objects:  95% (43/45)   Writing objects:  97% (44/45)   Writing objects: 100% (45/45)   Writing objects: 100% (45/45), 12.40 KiB, done.
+Total 45 (delta 27), reused 0 (delta 0)
+To git@github.com:Toriad/server_tracker.git
+   4b50a28..10b1466  master -> master
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ got[K[Kit add .
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git commit -m "dopc[K[Kc"
+[master 035cd45] doc
+ Committer: U-DEADHOUSE\james.black <james.black@DEAD-PER-PC-01.deadhouse.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+If the identity used for this commit is wrong, you can fix it with:
+
+    git commit --amend --author='Your Name <you@example.com>'
+
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+ create mode 100644 doc/README_FOR_APP.rdoc
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git push
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 369 bytes, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To git@github.com:Toriad/server_tracker.git
+   10b1466..035cd45  master -> master
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ git fetch
+remote: Counting objects: 66, done.[K
+remote: Compressing objects:   2% (1/40)   [Kremote: Compressing objects:   5% (2/40)   [Kremote: Compressing objects:   7% (3/40)   [Kremote: Compressing objects:  10% (4/40)   [Kremote: Compressing objects:  12% (5/40)   [Kremote: Compressing objects:  15% (6/40)   [Kremote: Compressing objects:  17% (7/40)   [Kremote: Compressing objects:  20% (8/40)   [Kremote: Compressing objects:  22% (9/40)   [Kremote: Compressing objects:  25% (10/40)   [Kremote: Compressing objects:  27% (11/40)   [Kremote: Compressing objects:  30% (12/40)   [Kremote: Compressing objects:  32% (13/40)   [Kremote: Compressing objects:  35% (14/40)   [Kremote: Compressing objects:  37% (15/40)   [Kremote: Compressing objects:  40% (16/40)   [Kremote: Compressing objects:  42% (17/40)   [Kremote: Compressing objects:  45% (18/40)   [Kremote: Compressing objects:  47% (19/40)   [Kremote: Compressing objects:  50% (20/40)   [Kremote: Compressing objects:  52% (21/40)   [Kremote: Compressing objects:  55% (22/40)   [Kremote: Compressing objects:  57% (23/40)   [Kremote: Compressing objects:  60% (24/40)   [Kremote: Compressing objects:  62% (25/40)   [Kremote: Compressing objects:  65% (26/40)   [Kremote: Compressing objects:  67% (27/40)   [Kremote: Compressing objects:  70% (28/40)   [Kremote: Compressing objects:  72% (29/40)   [Kremote: Compressing objects:  75% (30/40)   [Kremote: Compressing objects:  77% (31/40)   [Kremote: Compressing objects:  80% (32/40)   [Kremote: Compressing objects:  82% (33/40)   [Kremote: Compressing objects:  85% (34/40)   [Kremote: Compressing objects:  87% (35/40)   [Kremote: Compressing objects:  90% (36/40)   [Kremote: Compressing objects:  92% (37/40)   [Kremote: Compressing objects:  95% (38/40)   [Kremote: Compressing objects:  97% (39/40)   [Kremote: Compressing objects: 100% (40/40)   [Kremote: Compressing objects: 100% (40/40), done.[K
+remote: Total 41 (delta 16), reused 0 (delta 0)[K
+Unpacking objects:   2% (1/41)   Unpacking objects:   4% (2/41)   Unpacking objects:   7% (3/41)   Unpacking objects:   9% (4/41)   Unpacking objects:  12% (5/41)   Unpacking objects:  14% (6/41)   Unpacking objects:  17% (7/41)   Unpacking objects:  19% (8/41)   Unpacking objects:  21% (9/41)   Unpacking objects:  24% (10/41)   Unpacking objects:  26% (11/41)   Unpacking objects:  29% (12/41)   Unpacking objects:  31% (13/41)   Unpacking objects:  34% (14/41)   Unpacking objects:  36% (15/41)   Unpacking objects:  39% (16/41)   Unpacking objects:  41% (17/41)   Unpacking objects:  43% (18/41)   Unpacking objects:  46% (19/41)   Unpacking objects:  48% (20/41)   Unpacking objects:  51% (21/41)   Unpacking objects:  53% (22/41)   Unpacking objects:  56% (23/41)   Unpacking objects:  58% (24/41)   Unpacking objects:  60% (25/41)   Unpacking objects:  63% (26/41)   Unpacking objects:  65% (27/41)   Unpacking objects:  68% (28/41)   Unpacking objects:  70% (29/41)   Unpacking objects:  73% (30/41)   Unpacking objects:  75% (31/41)   Unpacking objects:  78% (32/41)   Unpacking objects:  80% (33/41)   Unpacking objects:  82% (34/41)   Unpacking objects:  85% (35/41)   Unpacking objects:  87% (36/41)   Unpacking objects:  90% (37/41)   Unpacking objects:  92% (38/41)   Unpacking objects:  95% (39/41)   Unpacking objects:  97% (40/41)   Unpacking objects: 100% (41/41)   Unpacking objects: 100% (41/41), done.
+From github.com:Toriad/server_tracker
+   035cd45..f44325c  master     -> origin/master
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ rails server[K[K[K[K[K[K[K[K[K[K[K[Ke.
+sh: e.: command not found
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ e .
+rails console
+ge  
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ e .
+
+
+
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ exit
+]exit
+Script done, file is typescript
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ script[K[K[K[K[K[Krai[K[K[Ke .
+
+]0;/cygdrive/e/Dev/RoR/Sites/server_tracker
+[32mjames.black@DEAD-PER-PC-01 [33m/cygdrive/e/Dev/RoR/Sites/server_tracker[0m
+$ exit
+exit
+
+Script done on Wed Sep 15 17:37:29 2010

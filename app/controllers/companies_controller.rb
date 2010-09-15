@@ -25,6 +25,19 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
   end
   
+  def dummy_company
+    @company = Company.new
+    @company.name = Faker::Company.name
+    @company.description = Faker::Lorem.paragraphs(2)
+    if @company.save
+      flash[:success] = "Successfully create Dummy Company."
+      redirect_to companies_url
+    else
+      flash[:error] = "Unable to Create dummy Company."
+      redirect_to companies_url
+    end
+  end
+  
   def update
     @company = Company.find(params[:id])
     if @company.update_attributes(params[:company])

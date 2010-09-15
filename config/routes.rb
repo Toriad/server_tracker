@@ -5,7 +5,12 @@ ServerTracker::Application.routes.draw do
 
   resources :domains
 
-  resources :companies
+  resources :companies do
+    resources :domains
+  end
+  
+  match '/dummy/:model' => 'dummies#create', :as => :dummy
+    
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
